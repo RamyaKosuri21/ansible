@@ -43,3 +43,12 @@
         msg: Hello , {{ URL }}
 
 ## Task variables have high precedence than play variables.
+
+- name: Demo on CLI vars
+  hosts: all
+  tasks:
+    - name: Print URL from CLI
+      debug:
+        msg: Hello, {{ URL_CLI }}
+
+
