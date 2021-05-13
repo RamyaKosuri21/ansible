@@ -58,4 +58,12 @@
       debug:
         msg: Hello, {{ URL_INV }}
 
+- name: Demo on vars from file
+  hosts: all
+  vars_files:
+    - sample-vars.yml
+  tasks:
+    - name: Print URL from file
+      debug:
+        msg: Hello, {{ URL_FILES }}
 
