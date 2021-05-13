@@ -67,3 +67,9 @@
       debug:
         msg: Hello, {{ URL_FILES }}
 
+- name: Print variable from fact
+  hosts: all
+  tasks:
+    - name: Print fact
+      debug:
+        msg: Fact = {{ ansible_memtotal_mb }}
