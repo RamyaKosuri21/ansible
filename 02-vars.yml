@@ -8,6 +8,6 @@
         msg: Hello {{ URL_PLAY }}
 
     - name: Print Variable again
-        debug:
-          msg: Bye {{ URL_PLAY }}
+      debug:
+        msg: Bye {{ URL_PLAY }}
 
