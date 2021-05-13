@@ -88,3 +88,10 @@
 ## In the above example we are accessing variable in quotes because ..It doesnt have any message printing before variable.
 ## USE DOUBLE QUOTES WHEN YOU USE ONLY VARIABLE AS VALUE TO THE KEY
 
+    - name: Set a Fact
+      set_fact:
+        UPTIME_OUTPUT: "{{ OUT.stdout }}"
+
+    - name: Print Uptime Output
+      debug:
+        msg: OUTPUT = {{ UPTIME_OUTPUT }}
