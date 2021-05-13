@@ -11,3 +11,19 @@
       debug:
         msg: Bye {{ URL_PLAY }}
 
+## If you declare a variable in play level then you can access the value across the play tasks.
+
+- name: Demo on vars on Task level
+  hosts: all
+  tasks:
+    - name: print task level variable
+      debug:
+        msg: Hello {{ URL_TASK1 }}
+      vars:
+        URL_TASK1: task1.example.com
+
+    - name: print task level variable
+      debug:
+        msg: Hello {{ URL_TASK1 }}
+
+## Tasks level variables are going have the scope to the only task on where it is declared.
