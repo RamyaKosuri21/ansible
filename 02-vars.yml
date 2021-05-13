@@ -22,8 +22,24 @@
       vars:
         URL_TASK1: task1.example.com
 
-    - name: print task level variable
-      debug:
-        msg: Hello again {{ URL_PLAY }}
+#    - name: print task level variable
+#      debug:
+#        msg: Hello {{ URL_TASK1 }}
 
 ## Tasks level variables are going have the scope to the only task on where it is declared.
+
+- name: Demo on same variable from play and task
+  hosts: all
+  vars:
+    URL: play.example.com
+  tasks:
+    - name: print URL
+      debug:
+        msg: Hello , {{ URL }}
+      vars:
+        URL: task.example.com
+    - name: Print URL
+      debug:
+        msg: Hello , {{ URL }}
+
+## Task variables have high precedence than play variables.
