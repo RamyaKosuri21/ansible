@@ -2,14 +2,14 @@
   yum:
    name: nginx
    state: installed
-   # yum install nginx -y
+# yum install nginx -y
 
- - name: Remove Html Docs
-   file:
-     path: /usr/share/nginx/html
-     state: absent
-     # cd /usr/share/nginx/html
-     # rm -rf *
+- name: Remove Html Docs
+  file:
+    path: /usr/share/nginx/html
+    state: absent
+# cd /usr/share/nginx/html
+# rm -rf *
 
 
 - name: Download from Github
