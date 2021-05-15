@@ -24,6 +24,7 @@ Instance_Create() {
 
   sed -e "s/COMPONENT/${COMPONENT}/" -e "s/IPADDRESS/${IPADDRESS}/" record.json >/tmp/record.json
   aws route53 change-resource-record-sets --hosted-zone-id Z0458821LW04JRY5AYUF --change-batch file:///tmp/record.json
+# these below two lines are added for ansible to catch the component name while creating instances and display the name in the inventory file
   sed -i -e "/${COMPONENT}/ d" ../inventory
   echo "${IPADDRESS} APP=${COMPONENT}" >>i../inventory
 
