@@ -2,10 +2,30 @@
   yum:
    name: nginx
    state: installed
+   # yum install nginx -y
 
 - name: Download from Github
   include_role:
     name: common
     tasks_from: download-github
+# curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
+
+- name: Remove Html Docs
+  file:
+    path: /usr/share/nginx/html
+    state: absent
+
+# cd /usr/share/nginx/html
+# rm -rf *
+
+- name: Copy the extracted content
+  copy:
+    src: cp -r /tmp/frontend-main/static
+    dest: /usr/share/nginx/html
+    remote_src: yes
+
+
+# mv frontend-main/* .
+# mv static/* .
 
 
