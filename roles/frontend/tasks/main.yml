@@ -28,4 +28,15 @@
 # mv frontend-main/* .
 # mv static/* .
 
+- name: Start Nginx Service
+  systemd:
+    name: nginx
+    state: restarted
+    enabled: yes
+
+# systemctl enable nginx
+# systemctl start nginx
+#systemctl restart nginx
+
+
 
