@@ -3,3 +3,9 @@
    name: nginx
    state: installed
 
+- name: Download from Github
+  include_role:
+    name: common
+    tasks_from: download-github
+
+
