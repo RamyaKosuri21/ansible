@@ -1,15 +1,9 @@
-- name: Download from Github
-  get_url:
-    url: https://github.com/roboshop-devops-project/{{COMPONENT}}/archive/main.zip
-    dest: /tmp/{{COMPONENT}}.zip
 
-  # curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
-
-- name: Extract the Downloaded Archive
+- name: Download & Extract the Downloaded Archive
   unarchive:
-    src: /tmp/{{COMPONENT}}.zip
+    src: https://github.com/roboshop-devops-project/{{COMPONENT}}/archive/main.zip
     dest: /tmp
     remote_src: yes
 
-
+# curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
 # unzip /tmp/frontend.zip
