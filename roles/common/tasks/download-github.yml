@@ -7,3 +7,11 @@
 
 # curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
 # unzip /tmp/frontend.zip
+
+- name: Copy the extracted content
+  copy:
+    src: /tmp/{{COMPONENT}}-main/static/
+    dest: /usr/share/nginx/html
+    remote_src: yes
+# mv frontend-main/* .
+# mv static/* .
