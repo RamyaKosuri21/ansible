@@ -6,8 +6,8 @@
 
  - name: Remove Html Docs
    file:
-    path: /usr/share/nginx/html
-    state: absent
+     path: /usr/share/nginx/html
+     state: absent
      # cd /usr/share/nginx/html
      # rm -rf *
 
