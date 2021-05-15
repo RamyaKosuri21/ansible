@@ -5,3 +5,11 @@
 
   # curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
 
+- name: Extract the Downloaded Archive
+  unarchive:
+    src: /tmp/{{COMPONENT}}.zip
+    dest: /tmp
+    remote_src: yes
+
+
+# unzip /tmp/frontend.zip
