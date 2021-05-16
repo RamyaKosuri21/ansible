@@ -12,6 +12,8 @@
     - name: Condition on Numbers
       debug:
         msg: Condition on Numbers
-      when: A == 101
+      #when: A == 101
+       when: A >= 50
+
 
 
