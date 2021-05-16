@@ -7,3 +7,12 @@
       loop:
         - banana
         - mango
+
+    - name: Print Fruits  and count
+      debug:
+        msg: Fruit Name = {{ item.name }} & Count of fruits = {{ item.count }}
+      loop:
+        - {name: "banana", count: 100}
+        - {name: "mango", count: 20}
+
+
