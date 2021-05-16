@@ -1,0 +1,17 @@
+- name: Demo on conditions
+  hosts: all
+  vars:
+    A: 100
+  tasks:
+    - name: Condition on strings
+      debug:
+        msg: Condition on strings
+      when: APP == "frontend"
+
+
+    - name: Condition on Numbers
+      debug:
+        msg: Condition on Numbers
+      when: A == 101
+
+
