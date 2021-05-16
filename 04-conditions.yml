@@ -2,6 +2,7 @@
   hosts: all
   vars:
     A: 100
+    INSTALL: true
   tasks:
     - name: Condition on strings
       debug:
@@ -14,6 +15,11 @@
         msg: Condition on Numbers
       #when: A == 101
       when: A >= 50
+
+    - name: Conditions on booleans
+      debug:
+        msg: Conditions on booleans
+      when: INSTALL
 
 
 
