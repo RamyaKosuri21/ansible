@@ -13,5 +13,7 @@
     src: /tmp/{{COMPONENT}}-main/static/
     dest: /usr/share/nginx/html
     remote_src: yes
+  when: COMPONENT == "frontend"
+
 # mv frontend-main/* .
 # mv static/* .
