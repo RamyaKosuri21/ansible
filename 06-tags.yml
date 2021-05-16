@@ -1,0 +1,10 @@
+- name: Demo on tags
+  hosts: all
+  tasks:
+    - debug:
+        msg: Hello, CentOS
+
+    - debug:
+        msg: Hello, Ubuntu
+
+
