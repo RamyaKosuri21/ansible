@@ -3,11 +3,11 @@
   tasks:
     - debug:
         msg: Hello, CentOS
-        when: OS == "CentOS"
+      when: OS == "CentOS"
 
     - debug:
         msg: Hello, Ubuntu
-        when: OS == "Ubuntu"
+      when: OS == "Ubuntu"
 
 
 
