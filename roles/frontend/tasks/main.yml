@@ -1,3 +1,8 @@
+- name: OS Pre-reqs
+  include_role:
+    name: common
+    tasks_from: os-prereqs
+
 - name: Install Nginx
   yum:
    name: nginx
