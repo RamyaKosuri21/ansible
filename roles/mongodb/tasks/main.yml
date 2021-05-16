@@ -1,0 +1,47 @@
+- name: Copy MongoDB repo file
+  copy:
+    src: mongodb.repo
+    dest: /etc/yum.repos.d/mongodb.repo
+
+- name: Install MongoDB
+  yum:
+    name: mongodb-org
+    state: installed
+
+- name: Config change of mongoDB to listen on 0.0.0.0
+  lineinfile:
+    path: /etc/mongod.conf
+    regexp: '^  bindIp'
+    line:  '  bindIp: 0.0.0.0'
+
+- name: Restart MongoDB
+  systemd:
+    name: mongod
+    state: restarted
+    enabled: yes
+
+- name: Download from Github
+  include_role:
+    name: common
+    tasks_from: download-github
+
+- name: Load Schema
+  shell: mongo < {{ item }}
+  args:
+    chdir: /tmp/mongodb-main/
+  loop:
+    - catalogue.js
+    - users.js
+
+
+
+
+
+
+
+
+
+
+
+
+
