@@ -19,9 +19,10 @@
 # systemctl daemon-reload
 # systemctl start catalogue
 # systemctl enable catalogue
+
 - name: Restart {{COMPONENT}} service
   systemd:
-    name: "{{COMPONENT}}
+    name: "{{COMPONENT}}"
     state: restarted
     enabled: yes
     daemon-reload: yes
