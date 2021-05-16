@@ -29,7 +29,7 @@
   become_user: roboshop
 
 - name: Setup SystemD for {{COMPONENT}}
-  include_tasks: "systemd.yml";
+  include_tasks: "systemd.yml"
 
 
 
