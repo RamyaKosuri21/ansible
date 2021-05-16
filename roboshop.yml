@@ -15,7 +15,7 @@
       tags: mongodb
 
     - name: Import Catalogue Role
-        import_role:
-          name: catalogue
-        when: APP == "catalogue"
-        tags: catalogue
+      import_role:
+        name: catalogue
+      when: APP == "catalogue"
+      tags: catalogue
