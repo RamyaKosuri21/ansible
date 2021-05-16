@@ -19,7 +19,8 @@
     - name: Conditions on booleans
       debug:
         msg: Conditions on booleans
-      when: INSTALL
+      when: INSTALL | bool
+
 
 
 
