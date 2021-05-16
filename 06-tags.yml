@@ -3,11 +3,11 @@
   tasks:
     - debug:
         msg: Hello, CentOS
-       tags: Centos
+      tags: Centos
 
     - debug:
         msg: Hello, Ubuntu
-       tags: Ubuntu
+      tags: Ubuntu
 
 
 
