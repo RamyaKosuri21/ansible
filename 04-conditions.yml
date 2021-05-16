@@ -13,7 +13,7 @@
       debug:
         msg: Condition on Numbers
       #when: A == 101
-       when: A >= 50
+      when: A >= 50
 
 
 
