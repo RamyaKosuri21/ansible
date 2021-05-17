@@ -58,7 +58,9 @@
 
 - name: Install MySQL Server
   yum:
-    name: mysql-community-server
+    name:
+      - mysql-community-server
+      - MySQL-python
     state: installed
 
 # Start mysql
@@ -68,6 +70,40 @@
     name: mysqld
     state: started
     enabled: yes
+
+- name: Check if MySQL password is set or not
+  mysql_info:
+    login_user: "root"
+    login_password: "RoboShop@123"
+    filter: version
+  ignore_errors: yes
+  register: out
+
+- name: Resetting the Default password
+  when: out.failed | bool
+  block:
+    - name: Grab default Password
+      shell: grep 'A temporary password' /var/log/mysqld.log | awk '{print $NF}'
+      register: DPASS
+
+    - name: copy password reset SQL file
+      copy:
+        src: reset-password.sql
+        dest: /tmp
+
+    - name: Reset the Password
+      shell: mysql --connect-expired-password -u root -p"{{ DPASS.stdout }}" </tmp/reset-password.sql
+
+
+
+
+
+
+
+
+
+
+
 
 
 
