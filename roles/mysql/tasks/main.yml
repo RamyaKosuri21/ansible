@@ -1,15 +1,6 @@
 
 
 
-#
-#    # curl -s -L -o /tmp/mysql.zip "https://github.com/roboshop-devops-project/mysql/archive/main.zip"
-#    Load the schema for Services.
-#
-#    # cd /tmp
-#    # unzip mysql.zip
-#    # cd mysql-main
-#  # mysql -u root -ppassword <shipping.sql
-
  # os pre-reqs
 
 - name: OS Pre-reqs
