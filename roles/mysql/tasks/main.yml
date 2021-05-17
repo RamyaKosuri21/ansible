@@ -32,6 +32,13 @@
 #    # cd mysql-main
 #  # mysql -u root -ppassword <shipping.sql
 
+ # os pre-reqs
+
+- name: OS Pre-reqs
+  include_role:
+    name: common
+    tasks_from: os-prereqs
+
 # Setup MySQL Repo
 
 - name: Setup Yum repos for Mysql
