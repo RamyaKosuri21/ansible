@@ -55,10 +55,10 @@
         name: rabbitmq
       when: APP == "rabbitmq"
       tags: rabbitmq
-#
-#    - name: Import Payment Role
-#      import_role:
-#        name: payment
-#      when: APP == "payment"
-#      tags: payment
-#
+
+    - name: Import Payment Role
+      import_role:
+        name: payment
+      when: APP == "payment"
+      tags: payment
+
