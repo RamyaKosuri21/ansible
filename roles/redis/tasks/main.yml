@@ -3,12 +3,14 @@
     name: common
     tasks_from: os-prereqs
 
+# yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm -y
 - name: Setup Yum Repos
   yum:
     name: http://rpms.remirepo.net/enterprise/remi-release-7.rpm
     state: installed
 
-
+# yum install redis -y
+# yum-config-manager --enable remi
 - name: Install Redis
   yum:
     name: redis
@@ -16,15 +18,25 @@
     enablerepo: remi
 
 
+  #Update the BindIP from 127.0.0.1 to 0.0.0.0 in config file /etc/redis.conf
+
+- name: Update Redis Listen address
+  lineinfile:
+    path: /etc/redis.conf
+    line: 'bind 0.0.0.0'
+    regexp: '^bind'
+
+  # systemctl enable redis
+  # systemctl start redis
+
+- name: Restart Redis
+  systemd:
+    name: redis
+    enabled: yes
+    state: restarted
 
 
-  # yum install epel-release yum-utils -y
-  # yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm -y
-  # yum-config-manager --enable remi
-  # yum install redis -y
-#Update the BindIP from 127.0.0.1 to 0.0.0.0 in config file /etc/redis.conf
-#
-#Start Redis Database
 
-# systemctl enable redis
-# systemctl start redis
+
+
+
