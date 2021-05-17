@@ -42,10 +42,16 @@
     msg: "{{uout}}"
 
 - name: Update User Info
+    lineinfile:
+      path: /home/roboshop/{{COMPONENT}}/payment.ini
+      regexp: '^uid'
+      line: "uid = {{uout.uid}}"
+
+- name: Update Group Info
   lineinfile:
     path: /home/roboshop/{{COMPONENT}}/payment.ini
     regexp: '^gid'
-    line: "uid = {{uout.group}}"
+    line: "gid = {{uout.group}}"
 
 
 
