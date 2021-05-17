@@ -3,12 +3,19 @@
     name: common
     tasks_from: os-prereqs
 
+- name: Setup Yum Repos
+  yum:
+    name: http://rpms.remirepo.net/enterprise/remi-release-7.rpm
+    state: installed
+
+
 - name: Install Redis
   yum:
-    name:
-      - http://rpms.remirepo.net/enterprise/remi-release-7.rpm
-      - redis
+    name: redis
     state: installed
+    enablerepo: remi
+
+
 
 
   # yum install epel-release yum-utils -y
