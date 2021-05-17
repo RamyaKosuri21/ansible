@@ -49,12 +49,12 @@
         name: shipping
       when: APP == "shipping"
       tags: shipping
-#
-#    - name: Import RabbitMQ Role
-#      import_role:
-#        name: rabbitmq
-#      when: APP == "rabbitmq"
-#      tags: rabbitmq
+
+    - name: Import RabbitMQ Role
+      import_role:
+        name: rabbitmq
+      when: APP == "rabbitmq"
+      tags: rabbitmq
 #
 #    - name: Import Payment Role
 #      import_role:
