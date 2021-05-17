@@ -44,11 +44,11 @@
       when: APP == "mysql"
       tags: mysql
 
-#    - name: Import Shipping Role
-#      import_role:
-#        name: shipping
-#      when: APP == "shipping"
-#      tags: shipping
+    - name: Import Shipping Role
+      import_role:
+        name: shipping
+      when: APP == "shipping"
+      tags: shipping
 #
 #    - name: Import RabbitMQ Role
 #      import_role:
