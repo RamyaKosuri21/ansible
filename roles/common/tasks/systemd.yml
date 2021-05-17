@@ -13,7 +13,8 @@
     replace: "{{item.endpoint}}"
   loop:
     - {name: "MONGO_DNSNAME", endpoint: "mongodb.devopsb55.cf"}
-
+    - {name: "REDIS_ENDPOINT", endpoint: "redis.devopsb55.cf"}
+    - {name: "MONGO_ENDPOINT", endpoint: "mongodb.devopsb55.cf"}
 
 
 # systemctl daemon-reload
