@@ -19,6 +19,9 @@
     - {name: "CATALOGUE_ENDPOINT", endpoint: "catalogue.devopsb55.cf"}
     - {name: "CART_ENDPOINT", endpoint: "cart.devopsb55.cf"}
     - {name: "DBHOST", endpoint: "mysql.devopsb55.cf"}
+    - {name: "CARTHOST", endpoint: "cart.devopsb55.cf"}
+    - {name: "USERHOST", endpoint: "user.devopsb55.cf"}
+    - {name: "AMQHOST", endpoint: "rabbitmq.devopsb55.cf"}
 
 
 # systemctl daemon-reload
