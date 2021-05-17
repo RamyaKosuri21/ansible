@@ -1,0 +1,11 @@
+# os pre-reqs
+
+- name: OS Pre-reqs
+  include_role:
+    name: common
+    tasks_from: os-prereqs
+
+- name: Import Python tasks
+  include_role:
+    name: common
+    tasks_from: python
