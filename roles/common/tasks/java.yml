@@ -1,0 +1,40 @@
+
+- name: Install Maven
+  yum:
+    name: maven
+    state: present
+
+  # useradd roboshop
+- name: Create Roboshop user
+  user:
+    name: roboshop
+
+  # $ curl -s -L -o /tmp/catalogue.zip "https://github.com/roboshop-devops-project/catalogue/archive/main.zip"
+  #    $ cd /home/roboshop
+  #    $ unzip /tmp/catalogue.zip
+
+- name: Download from Github
+  include_role:
+    name: common
+    tasks_from: download-github
+
+
+#    $ npm install
+
+- name: Install Maven deps & Compile Code
+  shell: mvn clean package
+  args:
+    chdir: /home/roboshop/{{COMPONENT}}
+  become_user: roboshop
+
+- name: Copy artifact to project path
+  shell: mv target/shipping-1.0.jar shipping.jar
+  args:
+    chdir: /home/roboshop/{{COMPONENT}}
+
+
+- name: Setup SystemD for {{COMPONENT}}
+  include_tasks: "systemd.yml"
+
+
+
