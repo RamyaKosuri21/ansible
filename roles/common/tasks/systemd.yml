@@ -12,16 +12,16 @@
     regexp: "{{item.name}}"
     replace: "{{item.endpoint}}"
   loop:
-    - {name: "MONGO_DNSNAME", endpoint: "mongodb.devopsb55.cf"}
-    - {name: "CART_HOST", endpoint: "cart.devopsb55.cf"}
-    - {name: "REDIS_ENDPOINT", endpoint: "redis.devopsb55.cf"}
-    - {name: "MONGO_ENDPOINT", endpoint: "mongodb.devopsb55.cf"}
-    - {name: "CATALOGUE_ENDPOINT", endpoint: "catalogue.devopsb55.cf"}
-    - {name: "CART_ENDPOINT", endpoint: "cart.devopsb55.cf"}
-    - {name: "DBHOST", endpoint: "mysql.devopsb55.cf"}
-    - {name: "CARTHOST", endpoint: "cart.devopsb55.cf"}
-    - {name: "USERHOST", endpoint: "user.devopsb55.cf"}
-    - {name: "AMQHOST", endpoint: "rabbitmq.devopsb55.cf"}
+    - {name: "MONGO_DNSNAME", endpoint: "mongodb-{{ENV}}.devopsb55.cf"}
+#    - {name: "CART_HOST", endpoint: "cart.devopsb55.cf"}
+    - {name: "REDIS_ENDPOINT", endpoint: "redis-{{ENV}}.devopsb55.cf"}
+    - {name: "MONGO_ENDPOINT", endpoint: "mongodb-{{ENV}}.devopsb55.cf"}
+    - {name: "CATALOGUE_ENDPOINT", endpoint: "catalogue-{{ENV}}.devopsb55.cf"}
+    - {name: "CART_ENDPOINT", endpoint: "cart-{{ENV}}.devopsb55.cf"}
+    - {name: "DBHOST", endpoint: "mysql-{{ENV}}.devopsb55.cf"}
+    - {name: "CARTHOST", endpoint: "cart-{{ENV}}.devopsb55.cf"}
+    - {name: "USERHOST", endpoint: "user-{{ENV}}.devopsb55.cf"}
+    - {name: "AMQHOST", endpoint: "rabbitmq-{{ENV}}.devopsb55.cf"}
 
 
 # systemctl daemon-reload
