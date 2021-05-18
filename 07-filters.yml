@@ -5,4 +5,4 @@
   tasks:
     - name: Print tar file
       debug:
-        msg: '{{URL.split(".")}}'
+        msg: '{{URL.split("/")}}'
