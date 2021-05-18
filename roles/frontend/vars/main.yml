@@ -1,1 +1,11 @@
 COMPONENT: frontend
+
+
+# we cannot give the component names like this thinking about future, our components should pick up according to environment
+# so we have to create DNS records accordingly
+
+#CATALOGUE: catalogue.devopsb55.cf
+#CART: cart.devopsb55.cf
+#USER: user.devopsb55.cf
+#SHIPPING: shipping.devopsb55.cf
+#PAYMENT: payment.devopsb55.cf
