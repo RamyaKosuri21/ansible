@@ -1,0 +1,8 @@
+- name: Demo on filters
+  hosts: localhost
+  vars:
+    URL: https://github.com/prometheus/prometheus/releases/download/v2.27.0/prometheus-2.27.0.linux-amd64.tar.gz
+  tasks:
+    - name: Print tar file
+      debug:
+        msg: '{{URL.split(".")}}'
