@@ -3,7 +3,7 @@
   "Changes": [{
     "Action": "UPSERT",
     "ResourceRecordSet": {
-      "Name": "COMPONENT.devopsb55.cf",
+      "Name": "COMPONENT-dev.devopsb55.cf",
       "Type": "A",
       "TTL": 300,
       "ResourceRecords": [{ "Value": "IPADDRESS"}]
