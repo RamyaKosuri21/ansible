@@ -24,6 +24,10 @@
 # curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
 # unzip /tmp/frontend.zip
 
+- name: Copy Roboshop configuration
+  template:
+    src: roboshop.conf
+    dest: /etc/nginx/default.d/roboshop.conf
 
 - name: Start Nginx Service
   systemd:
